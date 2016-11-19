@@ -1,21 +1,24 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
-#include <stdlib.h>
-#include "ImageClassNew2.h"
+#include <stdio.h>
+#include "ImageClass.h"
+
+
+ImageClass Image, NewImage;
 
 // função para chamar a imagem de fundo
 void desenhaFundo(void) {
-    // Cria um objeto imagem
-    Image = new ImageClass();
+    // Cria um objeto image
+    int imagemCima, imagemBaixo;
 
-    imagemCima = Image->Load("C:\Users\Vitória\Documents\UFRGS\5 semestre\FCG\trabalhoFCG\cima.png");
-    imagemBaixo = Image->Load("C:\Users\Vitória\Documents\UFRGS\5 semestre\FCG\trabalhoFCG\baixo.png");
+    imagemCima = Image.Load("C:\\Users\\Vitória\\git\\FinalProject_FCG\\trabalhoFCG\\cima.png");
+    imagemBaixo = Image.Load("C:\\Users\\Vitória\\git\\FinalProject_FCG\\trabalhoFCG\\baixo.png");
 
     if (!imagemCima || !imagemBaixo)
     {
-        printf("Uma das imagens não foi encontrada. Verifique o nome dos respectivos arquivos.\n");
-        printf("Pressione ENTRE para encerrar.");
-        getchar();
+        //printf("Uma das imagens não foi encontrada. Verifique o nome dos respectivos arquivos.\n");
+       // printf("Pressione ENTRE para encerrar.");
+        //getchar();
         exit(1);
     }
     else printf ("Imagens carregadas!\n");
